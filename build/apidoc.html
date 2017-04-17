@@ -72,6 +72,24 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.hiredis.Reader.prototype.feed">
+            function <span class="apidocSignatureSpan">hiredis.</span>Reader.prototype.feed
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hiredis.Reader.prototype.get">
+            function <span class="apidocSignatureSpan">hiredis.</span>Reader.prototype.get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.hiredis.createConnection">
             function <span class="apidocSignatureSpan">hiredis.</span>createConnection
             <span class="apidocSignatureSpan">(port, host)</span>
@@ -131,6 +149,58 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.hiredis.Reader.prototype.feed">module hiredis.Reader.prototype.feed</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hiredis.Reader.prototype.feed.feed">
+            function <span class="apidocSignatureSpan">hiredis.Reader.prototype.</span>feed
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hiredis.Reader.prototype.get">module hiredis.Reader.prototype.get</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hiredis.Reader.prototype.get.get">
+            function <span class="apidocSignatureSpan">hiredis.Reader.prototype.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hiredis.createConnection">module hiredis.createConnection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hiredis.createConnection.createConnection">
+            function <span class="apidocSignatureSpan">hiredis.</span>createConnection
+            <span class="apidocSignatureSpan">(port, host)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hiredis.writeCommand">module hiredis.writeCommand</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hiredis.writeCommand.writeCommand">
+            function <span class="apidocSignatureSpan">hiredis.</span>writeCommand
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -162,6 +232,32 @@ reader.feed(&#x22;$5\r\nhello\r\n&#x22;);
 reader.get() // =&#x3e; &#x22;hello&#x22;
 ```
 ...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hiredis.Reader.prototype.feed" id="apidoc.element.hiredis.Reader.prototype.feed">
+        function <span class="apidocSignatureSpan">hiredis.</span>Reader.prototype.feed
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function feed() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hiredis.Reader.prototype.get" id="apidoc.element.hiredis.Reader.prototype.get">
+        function <span class="apidocSignatureSpan">hiredis.</span>Reader.prototype.get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -347,6 +443,170 @@ buffers:
 ```javascript
 var hiredis = require(&#x22;hiredis&#x22;),
 ...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hiredis.Reader.prototype.feed" id="apidoc.module.hiredis.Reader.prototype.feed">module hiredis.Reader.prototype.feed</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hiredis.Reader.prototype.feed.feed" id="apidoc.element.hiredis.Reader.prototype.feed.feed">
+        function <span class="apidocSignatureSpan">hiredis.Reader.prototype.</span>feed
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function feed() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Alternatively, you can use it directly:
+
+```javascript
+var hiredis = require(&#x22;hiredis&#x22;),
+    reader = new hiredis.Reader();
+
+// Data comes in
+reader.<span class="apidocCodeKeywordSpan">feed</span>(&#x22;$5\r\nhello\r\n&#x22;);
+
+// Reply comes out
+reader.get() // =&#x3e; &#x22;hello&#x22;
+```
+
+Instead of returning strings for bulk payloads, it can also return
+buffers:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hiredis.Reader.prototype.get" id="apidoc.module.hiredis.Reader.prototype.get">module hiredis.Reader.prototype.get</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hiredis.Reader.prototype.get.get" id="apidoc.element.hiredis.Reader.prototype.get.get">
+        function <span class="apidocSignatureSpan">hiredis.Reader.prototype.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var hiredis = require(&#x22;hiredis&#x22;),
+    reader = new hiredis.Reader();
+
+// Data comes in
+reader.feed(&#x22;$5\r\nhello\r\n&#x22;);
+
+// Reply comes out
+reader.<span class="apidocCodeKeywordSpan">get</span>() // =&#x3e; &#x22;hello&#x22;
+```
+
+Instead of returning strings for bulk payloads, it can also return
+buffers:
+
+```javascript
+var hiredis = require(&#x22;hiredis&#x22;),
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hiredis.createConnection" id="apidoc.module.hiredis.createConnection">module hiredis.createConnection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hiredis.createConnection.createConnection" id="apidoc.element.hiredis.createConnection.createConnection">
+        function <span class="apidocSignatureSpan">hiredis.</span>createConnection
+        <span class="apidocSignatureSpan">(port, host)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createConnection = function (port, host) {
+    var s = net.createConnection(port || 6379, host);
+    var r = new hiredis.Reader();
+    var _write = s.write;
+
+    s.write = function() {
+        var data = exports.writeCommand.apply(this, arguments);
+        return _write.call(s, data);
+    }
+
+    s.on(&#x22;data&#x22;, function(data) {
+        var reply;
+        r.feed(data);
+        try {
+            while((reply = r.get()) !== undefined)
+                s.emit(&#x22;reply&#x22;, reply);
+        } catch(err) {
+            r = null;
+            s.emit(&#x22;error&#x22;, err);
+            s.destroy();
+        }
+    });
+
+    return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    size += 5 + bufLen.length + arg.length;
+}
+
+return Buffer.concat(parts, size);
+}
+
+exports.createConnection = function(port, host) {
+var s = net.<span class="apidocCodeKeywordSpan">createConnection</span>(port || 6379, host);
+var r = new hiredis.Reader();
+var _write = s.write;
+
+s.write = function() {
+    var data = exports.writeCommand.apply(this, arguments);
+    return _write.call(s, data);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hiredis.writeCommand" id="apidoc.module.hiredis.writeCommand">module hiredis.writeCommand</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hiredis.writeCommand.writeCommand" id="apidoc.element.hiredis.writeCommand.writeCommand">
+        function <span class="apidocSignatureSpan">hiredis.</span>writeCommand
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeCommand = function () {
+    var args = arguments,
+        bufLen = new Buffer(String(args.length), &#x22;ascii&#x22;),
+        parts = [bufStar, bufLen, bufCrlf],
+        size = 3 + bufLen.length;
+
+    for (var i = 0; i &#x3c; args.length; i++) {
+        var arg = args[i];
+        if (!Buffer.isBuffer(arg))
+            arg = new Buffer(String(arg));
+
+        bufLen = new Buffer(String(arg.length), &#x22;ascii&#x22;);
+        parts = parts.concat([
+            bufDollar, bufLen, bufCrlf,
+            arg, bufCrlf
+        ]);
+        size += 5 + bufLen.length + arg.length;
+    }
+
+    return Buffer.concat(parts, size);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 

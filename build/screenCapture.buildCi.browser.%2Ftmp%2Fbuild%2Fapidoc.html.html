@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://github.com/redis/hiredis-node"
-
-    >hiredis (v0.5.0)</a>
+    <a href="http://github.com/redis/hiredis-node">hiredis (v0.5.0)</a>
 </h1>
 <h4>Wrapper for reply processing code in hiredis</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.hiredis">module hiredis</a><ol>
 
@@ -216,20 +209,20 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Reader = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-The latter has an optional dependency on hiredis-node, so maybe you&#x27;re
+The latter has an optional dependency on hiredis-node, so maybe you're
 already using it without knowing.
 
 Alternatively, you can use it directly:
 
 ```javascript
-var hiredis = require(&#x22;hiredis&#x22;),
+var hiredis = require("hiredis"),
     reader = new hiredis.<span class="apidocCodeKeywordSpan">Reader</span>();
 
 // Data comes in
-reader.feed(&#x22;$5\r\nhello\r\n&#x22;);
+reader.feed("$5\r\nhello\r\n");
 
 // Reply comes out
-reader.get() // =&#x3e; &#x22;hello&#x22;
+reader.get() // =&gt; "hello"
 ```
 ...</pre></li>
     </ul>
@@ -279,15 +272,15 @@ reader.get() // =&#x3e; &#x22;hello&#x22;
         return _write.call(s, data);
     }
 
-    s.on(&#x22;data&#x22;, function(data) {
+    s.on("data", function(data) {
         var reply;
         r.feed(data);
         try {
             while((reply = r.get()) !== undefined)
-                s.emit(&#x22;reply&#x22;, reply);
+                s.emit("reply", reply);
         } catch(err) {
             r = null;
-            s.emit(&#x22;error&#x22;, err);
+            s.emit("error", err);
             s.destroy();
         }
     });
@@ -324,16 +317,16 @@ s.write = function() {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">writeCommand = function () {
     var args = arguments,
-        bufLen = new Buffer(String(args.length), &#x22;ascii&#x22;),
+        bufLen = new Buffer(String(args.length), "ascii"),
         parts = [bufStar, bufLen, bufCrlf],
         size = 3 + bufLen.length;
 
-    for (var i = 0; i &#x3c; args.length; i++) {
+    for (var i = 0; i &lt; args.length; i++) {
         var arg = args[i];
         if (!Buffer.isBuffer(arg))
             arg = new Buffer(String(arg));
 
-        bufLen = new Buffer(String(arg.length), &#x22;ascii&#x22;);
+        bufLen = new Buffer(String(arg.length), "ascii");
         parts = parts.concat([
             bufDollar, bufLen, bufCrlf,
             arg, bufCrlf
@@ -364,20 +357,20 @@ s.write = function() {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Reader = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-The latter has an optional dependency on hiredis-node, so maybe you&#x27;re
+The latter has an optional dependency on hiredis-node, so maybe you're
 already using it without knowing.
 
 Alternatively, you can use it directly:
 
 ```javascript
-var hiredis = require(&#x22;hiredis&#x22;),
+var hiredis = require("hiredis"),
     reader = new hiredis.<span class="apidocCodeKeywordSpan">Reader</span>();
 
 // Data comes in
-reader.feed(&#x22;$5\r\nhello\r\n&#x22;);
+reader.feed("$5\r\nhello\r\n");
 
 // Reply comes out
-reader.get() // =&#x3e; &#x22;hello&#x22;
+reader.get() // =&gt; "hello"
 ```
 ...</pre></li>
     </ul>
@@ -401,14 +394,14 @@ reader.get() // =&#x3e; &#x22;hello&#x22;
 Alternatively, you can use it directly:
 
 ```javascript
-var hiredis = require(&#x22;hiredis&#x22;),
+var hiredis = require("hiredis"),
     reader = new hiredis.Reader();
 
 // Data comes in
-reader.<span class="apidocCodeKeywordSpan">feed</span>(&#x22;$5\r\nhello\r\n&#x22;);
+reader.<span class="apidocCodeKeywordSpan">feed</span>("$5\r\nhello\r\n");
 
 // Reply comes out
-reader.get() // =&#x3e; &#x22;hello&#x22;
+reader.get() // =&gt; "hello"
 ```
 
 Instead of returning strings for bulk payloads, it can also return
@@ -427,21 +420,21 @@ buffers:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function get() { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var hiredis = require(&#x22;hiredis&#x22;),
+var hiredis = require("hiredis"),
     reader = new hiredis.Reader();
 
 // Data comes in
-reader.feed(&#x22;$5\r\nhello\r\n&#x22;);
+reader.feed("$5\r\nhello\r\n");
 
 // Reply comes out
-reader.<span class="apidocCodeKeywordSpan">get</span>() // =&#x3e; &#x22;hello&#x22;
+reader.<span class="apidocCodeKeywordSpan">get</span>() // =&gt; "hello"
 ```
 
 Instead of returning strings for bulk payloads, it can also return
 buffers:
 
 ```javascript
-var hiredis = require(&#x22;hiredis&#x22;),
+var hiredis = require("hiredis"),
 ...</pre></li>
     </ul>
 
@@ -464,14 +457,14 @@ var hiredis = require(&#x22;hiredis&#x22;),
 Alternatively, you can use it directly:
 
 ```javascript
-var hiredis = require(&#x22;hiredis&#x22;),
+var hiredis = require("hiredis"),
     reader = new hiredis.Reader();
 
 // Data comes in
-reader.<span class="apidocCodeKeywordSpan">feed</span>(&#x22;$5\r\nhello\r\n&#x22;);
+reader.<span class="apidocCodeKeywordSpan">feed</span>("$5\r\nhello\r\n");
 
 // Reply comes out
-reader.get() // =&#x3e; &#x22;hello&#x22;
+reader.get() // =&gt; "hello"
 ```
 
 Instead of returning strings for bulk payloads, it can also return
@@ -495,21 +488,21 @@ buffers:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function get() { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var hiredis = require(&#x22;hiredis&#x22;),
+var hiredis = require("hiredis"),
     reader = new hiredis.Reader();
 
 // Data comes in
-reader.feed(&#x22;$5\r\nhello\r\n&#x22;);
+reader.feed("$5\r\nhello\r\n");
 
 // Reply comes out
-reader.<span class="apidocCodeKeywordSpan">get</span>() // =&#x3e; &#x22;hello&#x22;
+reader.<span class="apidocCodeKeywordSpan">get</span>() // =&gt; "hello"
 ```
 
 Instead of returning strings for bulk payloads, it can also return
 buffers:
 
 ```javascript
-var hiredis = require(&#x22;hiredis&#x22;),
+var hiredis = require("hiredis"),
 ...</pre></li>
     </ul>
 
@@ -537,15 +530,15 @@ var hiredis = require(&#x22;hiredis&#x22;),
         return _write.call(s, data);
     }
 
-    s.on(&#x22;data&#x22;, function(data) {
+    s.on("data", function(data) {
         var reply;
         r.feed(data);
         try {
             while((reply = r.get()) !== undefined)
-                s.emit(&#x22;reply&#x22;, reply);
+                s.emit("reply", reply);
         } catch(err) {
             r = null;
-            s.emit(&#x22;error&#x22;, err);
+            s.emit("error", err);
             s.destroy();
         }
     });
@@ -587,16 +580,16 @@ s.write = function() {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">writeCommand = function () {
     var args = arguments,
-        bufLen = new Buffer(String(args.length), &#x22;ascii&#x22;),
+        bufLen = new Buffer(String(args.length), "ascii"),
         parts = [bufStar, bufLen, bufCrlf],
         size = 3 + bufLen.length;
 
-    for (var i = 0; i &#x3c; args.length; i++) {
+    for (var i = 0; i &lt; args.length; i++) {
         var arg = args[i];
         if (!Buffer.isBuffer(arg))
             arg = new Buffer(String(arg));
 
-        bufLen = new Buffer(String(arg.length), &#x22;ascii&#x22;);
+        bufLen = new Buffer(String(arg.length), "ascii");
         parts = parts.concat([
             bufDollar, bufLen, bufCrlf,
             arg, bufCrlf
@@ -618,3 +611,4 @@ s.write = function() {
     ]
 </div>
 </div>
+</body></html>
