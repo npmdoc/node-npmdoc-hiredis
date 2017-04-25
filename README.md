@@ -1,4 +1,7 @@
-# api documentation for  [hiredis (v0.5.0)](http://github.com/redis/hiredis-node)  [![npm package](https://img.shields.io/npm/v/npmdoc-hiredis.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hiredis) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hiredis.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hiredis)
+# npmdoc-hiredis
+
+#### basic api documentation for  [hiredis (v0.5.0)](http://github.com/redis/hiredis-node)  [![npm package](https://img.shields.io/npm/v/npmdoc-hiredis.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hiredis) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hiredis.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hiredis)
+
 #### Wrapper for reply processing code in hiredis
 
 [![NPM](https://nodei.co/npm/hiredis.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/hiredis)
@@ -66,7 +69,8 @@
         "install": "node-gyp rebuild",
         "test": "node test/reader.js && node test/writer.js"
     },
-    "version": "0.5.0"
+    "version": "0.5.0",
+    "bin": {}
 }
 ```
 
